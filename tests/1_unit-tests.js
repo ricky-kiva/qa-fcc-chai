@@ -63,17 +63,17 @@ suite('Unit Tests', function () {
   suite('Comparisons', function () {
     // #8
     test('#isAbove, #isAtMost', function () {
-      assert.isAtMost('hello'.length, 5);
-      assert.isAbove(1, 0);
-      assert.isAbove(Math.PI, 3);
-      assert.isAtMost(1 - Math.random(), 1);
+      assert.isAtMost('hello'.length, 5); // <=
+      assert.isAbove(1, 0); // >
+      assert.isAbove(Math.PI, 3); // >
+      assert.isAtMost(1 - Math.random(), 1); // <=
     });
     // #9
     test('#isBelow, #isAtLeast', function () {
-      assert.isAtLeast('world'.length, 5);
-      assert.isAtLeast(2 * Math.random(), 0);
-      assert.isBelow(5 % 2, 2);
-      assert.isBelow(2 / 3, 1);
+      assert.isAtLeast('world'.length, 5); // >=
+      assert.isAtLeast(2 * Math.random(), 0); // >=
+      assert.isBelow(5 % 2, 2); // <
+      assert.isBelow(2 / 3, 1); // <
     });
     // #10
     test('#approximately', function () {
@@ -109,7 +109,7 @@ suite('Unit Tests', function () {
     test('#isString, #isNotString', function () {
       assert.isNotString(Math.sin(Math.PI / 4), 'A float is not a string');
       assert.isString(process.env.PATH, 'An env variable is a string (or undefined)');
-      assert.isString(JSON.stringify({ type: 'object' }), 'JSON is a string');
+      assert.isString(JSON.stringify({ type: 'object' }), 'stringified JSON is a string');
     });
     // #14
     test('String #include, #notInclude', function () {

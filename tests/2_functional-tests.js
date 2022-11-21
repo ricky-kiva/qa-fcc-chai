@@ -38,7 +38,7 @@ suite('Functional Tests', function () {
     test('Send {surname: "Colombo"}', function (done) {
       chai
         .request(server)
-        .put('/travellers') // using put HTTP in the /travellers
+        .put('/travellers') // using PUT HTTP in the /travellers
         .send({ // sending what to 'put' 
           surname: "Colombo"
         })
